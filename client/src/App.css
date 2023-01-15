@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Merriweather+Sans&family=Roboto:ital,wght@1,300;1,900&family=Ubuntu&display=swap");
+:root {
+    --cadet: #282c34;
+    --header: rgb(95, 158, 160);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Inconsolata", monospace;
+    font-family: "Merriweather Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    background-color: var(--cadet);
+    font-size: calc(1em + 2vmin);
+    color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.centered {
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    text-indent: 1em;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: var(--cadet);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1em + 2vmin);
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+    background: var(--cadet);
+    color: var(--header);
+    border-radius: 0.25em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active:hover {
+    color: white;
+}
+
+nav {
+    padding: 0.25rem;
+    background-color: rgb(95, 158, 160);
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+}
+
+nav a:hover {
+    color: var(--cadet);
 }
