@@ -11,9 +11,9 @@ body {
     font-family: "Merriweather Sans", sans-serif;
     font-family: "Roboto", sans-serif;
     font-family: "Ubuntu", sans-serif;
-    background-color: var(--cadet);
-    font-size: calc(1em + 2vmin);
-    color: white;
+    font-size: calc(1em + 1vmin);
+    /* background-color: var(--cadet);
+    color: white; */
 }
 
 .centered {
