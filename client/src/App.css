@@ -41,7 +41,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: calc(1em + 2vmin);
-    color: white;
+    color: rgb(148, 100, 100);
 }
 
 .active {
@@ -57,6 +57,7 @@ body {
 nav {
     padding: 0.25rem;
     background-color: var(--header);
+    box-shadow: 0 0 0.25em 0.25em rgba(0, 0, 0, 0.5);
 }
 
 li {
