@@ -29,7 +29,11 @@ app.post("/login", (req, res) => {
     [email, password],
     (err, results) => {
       if (err) throw err;
-      res.send(results[0].email + " successfully logged in.");
+      try {
+        res.send(results[0].name + " successfully logged in.");
+      } catch (error) {
+        res.send("Invalid credentials");
+      }
     }
   );
 });
