@@ -1,75 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Merriweather+Sans&family=Roboto:ital,wght@1,300;1,900&family=Ubuntu&display=swap");
-:root {
-    --cadet: #4c79d2;
-    --header: #091b3d;
-}
-
 body {
     padding: 0;
     margin: 0;
+    background-color: #282c34;
+    color: white;
     font-family: "Inconsolata", monospace;
     font-family: "Merriweather Sans", sans-serif;
     font-family: "Roboto", sans-serif;
     font-family: "Ubuntu", sans-serif;
-    font-size: calc(1em + 1vmin);
-    /* background-color: var(--cadet);
-    color: white; */
 }
 
-.centered {
-    display: "flex";
-    justify-content: "center";
-    align-items: "center";
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-
-.notFound {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: red;
-    text-indent: 1em;
-}
-
-.App-header {
-    background-color: var(--cadet);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(1em + 2vmin);
-    color: rgb(148, 100, 100);
-}
-
-.active {
-    background: var(--cadet);
-    color: white;
-    border-radius: 0.25em;
-}
-
-.active:hover {
-    color: var(--header);
-}
-
-nav {
-    padding: 0.25rem;
-    background-color: var(--header);
-    box-shadow: 0 0 0.25em 0.25em rgba(0, 0, 0, 0.5);
-}
-
-li {
+nav ul li {
     display: inline;
+    list-style-type: none;
 }
 
-a {
+nav a {
     text-decoration: none;
     color: white;
     padding: 0.5em;
 }
 
-nav a:hover {
-    color: var(--cadet);
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
+}
+
+input[type="button"] {
+    background: rgb(170, 170, 170);
+}
+
+input {
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 0.25em;
+    border: none;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+
+h1 {
+    margin: 0;
+}
+
+.active {
+    color: #282c34;
+    background: white;
+    padding: 1em;
+    border-radius: 0em 0em 0.6em 0.6em;
+}
+
+.App-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(1em + 2vmin);
+    color: white;
+}
+
+.notFound {
+    color: red;
 }

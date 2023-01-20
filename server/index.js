@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config({ path: "./.env" });
 const express = require("express");
 const mysql = require("mysql2");
 const PORT = 8080;
+const cors = require("cors");
 
 const connection = mysql.createConnection({
   host: process.env.HOST,
@@ -12,6 +13,7 @@ const connection = mysql.createConnection({
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -30,7 +32,9 @@ app.post("/login", (req, res) => {
     (err, results) => {
       if (err) throw err;
       try {
+        console.log("begin login");
         res.send(results[0].name + " successfully logged in.");
+        console.log("login complete");
       } catch (error) {
         res.send("Invalid credentials");
       }
