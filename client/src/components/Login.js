@@ -9,10 +9,16 @@ const Login = () => {
     email: email,
     password: pw,
   };
+  let good;
   const submitForm = async (e) => {
-    await axios
-      .post("http://localhost:8080/login", loginForm)
-      .then((res) => setMessage(res.data));
+    await axios.post("http://localhost:8080/login", loginForm).then((res) => {
+      setMessage(res.data);
+      if (res.data === "Invalid credentials") {
+        good = false;
+      } else {
+        good = true;
+      }
+    });
   };
   return (
     <>
@@ -21,12 +27,14 @@ const Login = () => {
           <h1>Login</h1>
         </div>
         <form onSubmit={submitForm}>
+          <label>Email</label>
           <input
             type="text"
             required
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <label>Password</label>
           <input
             type="password"
             required
@@ -34,7 +42,12 @@ const Login = () => {
             onChange={(e) => setPw(e.target.value)}
           />
           <input type="button" value="Login" onClick={() => submitForm()} />
-          <p style={{ fontSize: "1.5em", textAlign: "center" }}>{message}</p>
+          <p
+            className={good ? "good" : "bad"}
+            style={{ fontSize: "1.5em", textAlign: "center" }}
+          >
+            {message}
+          </p>
         </form>
       </div>
     </>

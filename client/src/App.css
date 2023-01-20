@@ -30,6 +30,7 @@ form {
 
 input[type="button"] {
     background: rgb(170, 170, 170);
+    cursor: pointer;
 }
 
 input {
@@ -64,5 +65,13 @@ h1 {
 }
 
 .notFound {
+    color: red;
+}
+
+.good {
+    color: green;
+}
+
+.bad {
     color: red;
 }
