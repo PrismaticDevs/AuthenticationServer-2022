@@ -10,7 +10,6 @@ const Login = () => {
     password: pw,
   };
   const submitForm = async (e) => {
-    // e.preventDefault();
     await axios
       .post("http://localhost:8080/login", loginForm)
       .then((res) => setMessage(res.data));
