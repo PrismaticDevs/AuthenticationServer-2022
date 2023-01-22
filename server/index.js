@@ -23,22 +23,19 @@ app.use(cp());
 
 connection.connect(() => console.log("connected to db"));
 let hash;
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
   const email = req.body.email;
-  const password = req.body.password;
   connection.query(
     `select password from users where email="${email}"`,
     (err, results) => {
       if (err) throw err;
       hash = results[0].password;
-      console.log(hash, 1);
     }
   );
   connection.query(
     `select * from users  where email=? and password=?`,
     [email, hash],
     (err, results) => {
-      console.log(hash, 2);
       if (err) throw err;
       try {
         const payload = {
@@ -69,7 +66,7 @@ app.get("/logout", (req, res) => {
   res.send("Successfully logged out");
 });
 
-app.post("/register", (req, res) => {
+app.post("/register", async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const name = req.body.name;
