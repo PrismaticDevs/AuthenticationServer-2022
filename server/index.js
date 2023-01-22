@@ -5,6 +5,7 @@ const PORT = 8080;
 const cors = require("cors");
 const cp = require("cookie-parser");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const connection = mysql.createConnection({
   host: process.env.HOST,
@@ -21,22 +22,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cp());
 
 connection.connect(() => console.log("connected to db"));
-
-let password;
+let hash;
 app.post("/login", (req, res) => {
   const email = req.body.email;
-  password = req.body.password;
+  const password = req.body.password;
+  connection.query(
+    `select password from users where email="${email}"`,
+    (err, results) => {
+      if (err) throw err;
+      hash = results[0].password;
+      console.log(hash, 1);
+    }
+  );
   connection.query(
     `select * from users  where email=? and password=?`,
-    [email, password],
+    [email, hash],
     (err, results) => {
+      console.log(hash, 2);
       if (err) throw err;
       try {
         const payload = {
           email: req.body.email,
           name: results[0].name,
         };
-        const token = jwt.sign(payload, password);
+        const token = jwt.sign(payload, hash);
         res
           .cookie("token", token, {
             httpOnly: true,
@@ -51,13 +60,32 @@ app.post("/login", (req, res) => {
 
 app.get("/token", (req, res) => {
   const token = req.cookies.token;
-  const payload = jwt.verify(token, password);
+  const payload = jwt.verify(token, hash);
   res.json(payload);
 });
 
 app.get("/logout", (req, res) => {
   res.clearCookie("token");
   res.send("Successfully logged out");
+});
+
+app.post("/register", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  const name = req.body.name;
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(password, salt, (err, hash) => {
+      if (err) throw err;
+      connection.query(
+        `insert into users (name, email, password) values (?, ?, ?)`,
+        [name, email, hash],
+        (err) => {
+          if (err) throw err;
+          res.send(`Successfully registered ${name}`);
+        }
+      );
+    });
+  });
 });
 
 app.listen(PORT, () => {
