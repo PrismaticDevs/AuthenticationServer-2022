@@ -74,6 +74,7 @@ app.post("/register", async (req, res) => {
     `select * from users where email=?`,
     [email],
     (err, results) => {
+      if (err) throw err;
       if (results.length !== 0) {
         res.send(`${email} already has an account`);
       } else {
