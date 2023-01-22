@@ -73,19 +73,29 @@ app.post("/register", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const name = req.body.name;
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-      if (err) throw err;
-      connection.query(
-        `insert into users (name, email, password) values (?, ?, ?)`,
-        [name, email, hash],
-        (err) => {
-          if (err) throw err;
-          res.send(`Successfully registered ${name}`);
-        }
-      );
-    });
-  });
+  connection.query(
+    `select * from users where email=?`,
+    [email],
+    (err, results) => {
+      if (results.length !== 0) {
+        res.send(`${email} already has an account`);
+      } else {
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(password, salt, (err, hash) => {
+            if (err) throw err;
+            connection.query(
+              `insert into users (name, email, password) values (?, ?, ?)`,
+              [name, email, hash],
+              (err) => {
+                if (err) throw err;
+                res.send(`Successfully registered ${name}`);
+              }
+            );
+          });
+        });
+      }
+    }
+  );
 });
 
 app.listen(PORT, () => {
