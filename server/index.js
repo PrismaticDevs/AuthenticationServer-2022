@@ -25,32 +25,43 @@ connection.connect(() => console.log("connected to db"));
 let hash;
 app.post("/login", async (req, res) => {
   const email = req.body.email;
+  const password = req.body.password;
   connection.query(
-    `select password from users where email="${email}"`,
+    `select password from users where email=?`,
+    [email],
     (err, results) => {
       if (err) throw err;
-      hash = results[0].password;
-    }
-  );
-  connection.query(
-    `select * from users  where email=? and password=?`,
-    [email, hash],
-    (err, results) => {
-      if (err) throw err;
-      try {
-        const payload = {
-          email: req.body.email,
-          name: results[0].name,
-        };
-        const token = jwt.sign(payload, hash);
-        res
-          .cookie("token", token, {
-            httpOnly: true,
-          })
-          .send(results[0].name + " successfully logged in.");
-      } catch (error) {
-        res.send("Invalid credentials");
-      }
+      bcrypt.compare(password, results[0].password, (err, result) => {
+        console.log(result);
+        hash = results[0].password;
+        if (result) {
+          connection.query(
+            `select * from users  where email=? and password=?`,
+            [email, hash],
+            (err, results) => {
+              if (err) throw err;
+              console.log(password, hash);
+              try {
+                const payload = {
+                  email: req.body.email,
+                  name: results[0].name,
+                };
+                const token = jwt.sign(payload, hash);
+                console.log(hash);
+                res
+                  .cookie("token", token, {
+                    httpOnly: true,
+                  })
+                  .send(results[0].name + " successfully logged in.");
+              } catch (error) {
+                res.send("Invalid credentials");
+              }
+            }
+          );
+        } else {
+          res.send("Invalid credentials");
+        }
+      });
     }
   );
 });
