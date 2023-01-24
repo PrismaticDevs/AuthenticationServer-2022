@@ -31,37 +31,41 @@ app.post("/login", async (req, res) => {
     [email],
     (err, results) => {
       if (err) throw err;
-      bcrypt.compare(password, results[0].password, (err, result) => {
-        console.log(result);
-        hash = results[0].password;
-        if (result) {
-          connection.query(
-            `select * from users  where email=? and password=?`,
-            [email, hash],
-            (err, results) => {
-              if (err) throw err;
-              console.log(password, hash);
-              try {
-                const payload = {
-                  email: req.body.email,
-                  name: results[0].name,
-                };
-                const token = jwt.sign(payload, hash);
-                console.log(hash);
-                res
-                  .cookie("token", token, {
-                    httpOnly: true,
-                  })
-                  .send(results[0].name + " successfully logged in.");
-              } catch (error) {
-                res.send("Invalid credentials");
+      if (results.length) {
+        bcrypt.compare(password, results[0].password, (err, result) => {
+          console.log(result);
+          hash = results[0].password;
+          if (result) {
+            connection.query(
+              `select * from users  where email=? and password=?`,
+              [email, hash],
+              (err, results) => {
+                if (err) throw err;
+                console.log(password, hash);
+                try {
+                  const payload = {
+                    email: req.body.email,
+                    name: results[0].name,
+                  };
+                  const token = jwt.sign(payload, hash);
+                  console.log(hash);
+                  res
+                    .cookie("token", token, {
+                      httpOnly: true,
+                    })
+                    .send(results[0].name + " successfully logged in.");
+                } catch (error) {
+                  res.send("Invalid credentials");
+                }
               }
-            }
-          );
-        } else {
-          res.send("Invalid credentials");
-        }
-      });
+            );
+          } else {
+            res.json("Invalid credentials");
+          }
+        });
+      } else {
+        res.json("Invalid credentials");
+      }
     }
   );
 });
