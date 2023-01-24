@@ -55,16 +55,16 @@ app.post("/login", async (req, res) => {
                     })
                     .send(results[0].name + " successfully logged in.");
                 } catch (error) {
-                  res.send("Invalid credentials");
+                  res.clearCookie("token").send("Invalid credentials");
                 }
               }
             );
           } else {
-            res.json("Invalid credentials");
+            res.clearCookie("token").json("Invalid credentials");
           }
         });
       } else {
-        res.json("Invalid credentials");
+        res.clearCookie("token").json("Invalid credentials");
       }
     }
   );
