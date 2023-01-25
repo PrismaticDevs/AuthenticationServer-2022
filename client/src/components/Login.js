@@ -5,19 +5,20 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(false);
   const loginForm = {
     email: email,
     password: pw,
   };
-  let good;
   const submitForm = async (e) => {
     await axios.post("http://localhost:8080/login", loginForm).then((res) => {
       setMessage(res.data);
       if (res.data === "Invalid credentials") {
-        good = false;
+        setStatus(false);
       } else {
-        good = true;
+        setStatus(true);
       }
+      console.log(res.data, status);
     });
   };
   return (
@@ -43,7 +44,7 @@ const Login = () => {
           />
           <input type="button" value="Login" onClick={() => submitForm()} />
           <p
-            className={good ? "good" : "bad"}
+            className={status ? "good" : "bad"}
             style={{ fontSize: "1.5em", textAlign: "center" }}
           >
             {message}

@@ -70,8 +70,36 @@ h1 {
 
 .good {
     color: green;
+    animation: zoom-g;
+    animation-duration: 3s;
 }
 
 .bad {
     color: red;
+    animation: zoom-b;
+    animation-duration: 3s;
+}
+
+@keyframes zoom-g {
+    0% {
+        scale: 0.5;
+    }
+    66% {
+        scale: 1.25;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes zoom-b {
+    0% {
+        scale: 1;
+    }
+    33% {
+        scale: 1.25;
+    }
+    100% {
+        scale: 0.5;
+    }
 }
