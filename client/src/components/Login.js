@@ -18,7 +18,6 @@ const Login = () => {
       } else {
         setStatus(true);
       }
-      console.log(res.data, status);
     });
   };
   return (
