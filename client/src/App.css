@@ -31,6 +31,8 @@ form {
 input[type="button"] {
     background: rgb(170, 170, 170);
     cursor: pointer;
+    margin-top: 1.25em;
+    width: 100%;
 }
 
 input {
@@ -38,6 +40,7 @@ input {
     padding: 0.5em;
     margin: 0.25em;
     border: none;
+    width: 100%;
 }
 
 input:focus {
@@ -76,8 +79,6 @@ h1 {
 
 .bad {
     color: red;
-    animation: zoom-b;
-    animation-duration: 3s;
 }
 
 @keyframes zoom-g {
@@ -92,14 +93,21 @@ h1 {
     }
 }
 
-@keyframes zoom-b {
-    0% {
-        scale: 1;
-    }
-    33% {
-        scale: 1.25;
-    }
-    100% {
-        scale: 0.5;
-    }
+.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.logout {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: crimson;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
 }

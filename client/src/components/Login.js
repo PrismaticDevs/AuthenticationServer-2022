@@ -11,7 +11,7 @@ const Login = () => {
     password: pw,
   };
   const submitForm = async (e) => {
-    await axios.post("http://localhost:8080/login", loginForm).then((res) => {
+    await axios.post("/login", loginForm).then((res) => {
       setMessage(res.data);
       if (res.data === "Invalid credentials") {
         setStatus(false);
@@ -19,6 +19,13 @@ const Login = () => {
         setStatus(true);
       }
     });
+  };
+  const logout = async () => {
+    if (window.confirm("Are you sure that you want to log out?")) {
+      await axios.get("/logout");
+    } else {
+      return;
+    }
   };
   return (
     <>
@@ -49,6 +56,9 @@ const Login = () => {
             {message}
           </p>
         </form>
+        <button className="logout" onClick={logout}>
+          Logout
+        </button>
       </div>
     </>
   );
