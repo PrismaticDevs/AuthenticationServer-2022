@@ -19,13 +19,8 @@ const Login = () => {
         setStatus(true);
       }
     });
-  };
-  const logout = async () => {
-    if (window.confirm("Are you sure that you want to log out?")) {
-      await axios.get("/logout");
-    } else {
-      return;
-    }
+    const goHome = () => (window.location.href = "/");
+    setTimeout(goHome, 3000);
   };
   return (
     <>
@@ -56,9 +51,6 @@ const Login = () => {
             {message}
           </p>
         </form>
-        <button className="logout" onClick={logout}>
-          Logout
-        </button>
       </div>
     </>
   );
