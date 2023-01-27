@@ -1,6 +1,8 @@
 import { Outlet, NavLink } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import LogoutIcon from "@mui/icons-material/Logout";
+import LoginIcon from "@mui/icons-material/Login";
 
 const Layout = () => {
   const [token, setToken] = useState({});
@@ -32,15 +34,24 @@ const Layout = () => {
           <li>
             <NavLink to="/contact">Contact</NavLink>
           </li>
-          <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-          <li style={{ display: "flex", float: "right" }}>
-            <p className="">User: {token.name}</p>
-            <button className="logout" onClick={logout}>
-              Logout
-            </button>
-          </li>
+          {token.name ? (
+            <li style={{ display: "flex", float: "right" }}>
+              <p className="">User: {token.name}</p>
+              <button className="logout" onClick={logout}>
+                <span title="Logout">
+                  <LogoutIcon />
+                </span>
+              </button>
+            </li>
+          ) : (
+            <li className="login" style={{ display: "flex", float: "right" }}>
+              <NavLink className="login" to="/login">
+                <span title="Login">
+                  <LoginIcon className="login" />
+                </span>
+              </NavLink>
+            </li>
+          )}
         </ul>
       </nav>
 

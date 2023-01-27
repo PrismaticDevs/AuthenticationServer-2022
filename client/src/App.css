@@ -103,12 +103,13 @@ h1 {
     left: 0;
 }
 
-.logout {
-    padding: 0.5em;
-    margin: 0.5em;
-    background-color: crimson;
+.logout,
+.login {
+    margin: 0;
+    background: none;
     color: white;
     border: none;
     outline: none;
-    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.5);
+    display: "flex";
+    float: "right";
 }
