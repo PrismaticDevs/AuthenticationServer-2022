@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Merriweather+Sans&family=Roboto:ital,wght@1,300;1,900&family=Ubuntu&display=swap");
+:root {
+    --good: #c2ed5f;
+    --bad: #e42b2e;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -72,17 +77,17 @@ h1 {
 }
 
 .notFound {
-    color: red;
+    color: var(--bad);
 }
 
 .good {
-    color: green;
+    color: var(--good);
     animation: zoom-g;
     animation-duration: 3s;
 }
 
 .bad {
-    color: red;
+    color: var(--bad);
 }
 
 @keyframes zoom-g {
@@ -116,6 +121,18 @@ h1 {
     padding: 0.5em;
 }
 
+.login {
+    color: var(--good);
+}
+
+.logout {
+    color: var(--bad);
+}
+
 .mr {
     margin-right: 3em;
+}
+
+.text {
+    color: white;
 }
