@@ -105,11 +105,17 @@ h1 {
 
 .logout,
 .login {
-    margin: 0;
+    top: 0;
+    right: 0;
+    position: fixed;
     background: none;
     color: white;
     border: none;
     outline: none;
-    display: "flex";
-    float: "right";
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.mr {
+    margin-right: 3em;
 }

@@ -35,16 +35,16 @@ const Layout = () => {
             <NavLink to="/contact">Contact</NavLink>
           </li>
           {token.name ? (
-            <li style={{ display: "flex", float: "right" }}>
-              <p className="">User: {token.name}</p>
-              <button className="logout" onClick={logout}>
+            <li className="logout">
+              <p className="login mr">User: {token.name}</p>
+              <button className="login" onClick={logout}>
                 <span title="Logout">
                   <LogoutIcon />
                 </span>
               </button>
             </li>
           ) : (
-            <li className="login" style={{ display: "flex", float: "right" }}>
+            <li className="login">
               <NavLink className="login" to="/login">
                 <span title="Login">
                   <LoginIcon className="login" />
