@@ -16,6 +16,14 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
 button {
     cursor: pointer;
 }
@@ -116,7 +124,8 @@ h1 {
     border: none;
     outline: none;
     margin: 0.5em;
-    padding: 0.5em;
+    margin-top: 0;
+    /* padding-left: 0.5em; */
 }
 
 .login:hover,
@@ -130,6 +139,11 @@ h1 {
 
 .logout {
     color: var(--bad);
+}
+
+p.logout,
+p.login {
+    margin-top: 3pt;
 }
 
 .text {

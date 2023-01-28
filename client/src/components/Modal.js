@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Modal = (props) => {
   const [showModal, setShowModal] = useState(true);
@@ -9,6 +9,7 @@ const Modal = (props) => {
     setShowModal(false);
     window.location.reload();
   };
+
   return showModal ? (
     <div className="modal">
       <h3>{props.message}</h3>
