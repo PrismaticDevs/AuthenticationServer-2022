@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
+import Modal from "./components/Modal";
 
 const Layout = () => {
   const [token, setToken] = useState({});
+  const [modal, setModal] = useState(false);
   const getToken = async () => {
     await axios.get("/token").then((res) => {
       setToken(res.data);
@@ -13,11 +15,11 @@ const Layout = () => {
     });
   };
   const logout = async () => {
-    if (window.confirm("Are you sure that you want to log out?")) {
-      await axios.get("/logout");
-    } else {
-      return;
-    }
+    setModal(true);
+    await getToken();
+  };
+  const out = async () => {
+    await axios.get("/logout");
     getToken();
     window.location.href = "/login";
   };
@@ -54,6 +56,11 @@ const Layout = () => {
           )}
         </ul>
       </nav>
+      {modal ? (
+        <Modal message="Are you sure you want to log out?" confirm={out} />
+      ) : (
+        <></>
+      )}
 
       <Outlet />
     </>

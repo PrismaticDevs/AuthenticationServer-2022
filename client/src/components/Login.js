@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Modal from "./Modal";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -28,12 +29,13 @@ const Login = () => {
         <div className="App-header">
           <h1>Login</h1>
         </div>
-        <form onSubmit={submitForm}>
+        <form autoComplete="off" onSubmit={submitForm}>
           <label>Email</label>
           <input
             type="text"
             required
             placeholder="Email"
+            autoComplete="off"
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Password</label>
@@ -41,6 +43,7 @@ const Login = () => {
             type="password"
             required
             placeholder="Password"
+            autoComplete="off"
             onChange={(e) => setPw(e.target.value)}
           />
           <input type="button" value="Login" onClick={() => submitForm()} />
