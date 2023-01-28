@@ -38,12 +38,12 @@ const Layout = () => {
           </li>
           {token.name ? (
             <li className="logout">
-              <p className="login text mr">User: {token.name}</p>
               <button className="logout" onClick={logout}>
                 <span title="Logout">
                   <LogoutIcon />
                 </span>
               </button>
+              <p className="login text">User: {token.name}</p>
             </li>
           ) : (
             <li className="login">
