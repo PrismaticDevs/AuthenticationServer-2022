@@ -4,6 +4,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import "./css/sidebar.css";
 
 const Sidebar = () => {
+  const [showHTML, setShowHTML] = useState(false);
+  const toggleHTML = () => setShowHTML(!showHTML);
   const [showVanilla, setShowVanilla] = useState(false);
   const toggleVanilla = () => setShowVanilla(!showVanilla);
   const [showFrameworks, setShowFrameworks] = useState(false);
@@ -18,6 +20,25 @@ const Sidebar = () => {
     <>
       <div className="sidebar">
         <ul>
+          <li>
+            <button className={showHTML ? "show" : "hide"} onClick={toggleHTML}>
+              HTML & CSS
+              {showHTML ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
+            </button>
+            {showHTML ? (
+              <>
+                <a
+                  href="https://www.w3schools.com/html/html_css.asp"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  HTML & CSS
+                </a>
+              </>
+            ) : (
+              <></>
+            )}
+          </li>
           <li>
             <button
               className={showVanilla ? "show" : "hide"}
