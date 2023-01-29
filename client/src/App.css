@@ -57,7 +57,7 @@ nav a {
 form {
     display: flex;
     flex-direction: column;
-    width: 33%;
+    width: 100%;
     background: var(--base);
     padding: 3em;
     padding-top: 1em;
@@ -156,6 +156,11 @@ h1 {
     opacity: 0.5;
 }
 
+.login.text,
+.logout.text {
+    word-wrap: break-word;
+}
+
 .login {
     color: var(--good);
 }
@@ -225,8 +230,17 @@ p.login {
 .form-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
     width: 100%;
+}
+
+.subForm {
+    display: flex;
+    flex-direction: column;
+    margin: 8em;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
