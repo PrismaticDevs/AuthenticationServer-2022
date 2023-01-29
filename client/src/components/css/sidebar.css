@@ -1,0 +1,17 @@
+:root {
+    --good: #c2ed5f;
+    --bad: #e42b2e;
+    --base: #282c34;
+    --secondary: #637caf;
+}
+
+.sidebar {
+    background-color: var(--base);
+    width: 15%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}

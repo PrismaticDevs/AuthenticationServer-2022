@@ -4,6 +4,7 @@ import axios from "axios";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LoginIcon from "@mui/icons-material/Login";
 import Modal from "./components/Modal";
+import Sidebar from "./components/Sidebar";
 
 const Layout = () => {
   const [token, setToken] = useState({});
@@ -55,6 +56,7 @@ const Layout = () => {
             </li>
           )}
         </ul>
+        <Sidebar />
       </nav>
       {modal ? (
         <Modal message="Are you sure you want to log out?" confirm={out} />

@@ -36,7 +36,7 @@ const Home = () => {
     </>
   );
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div className="App-header">
         <h1>Home</h1>
       </div>
@@ -46,7 +46,7 @@ const Home = () => {
         author="Matthew Brignola"
         date="1/28/2022"
       />
-    </>
+    </div>
   );
 };
 
