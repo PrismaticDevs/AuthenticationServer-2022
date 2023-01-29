@@ -17,11 +17,14 @@
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
+        "express-validator": "^6.14.3",
         "mysql2": "^3.0.1",
         "nodemon": "^2.0.20"
     },
-    "licenses": [{
-        "type": "MIT",
-        "url": "https://www.opensource.org/licenses/mit-license.php"
-    }]
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://www.opensource.org/licenses/mit-license.php"
+        }
+    ]
 }
