@@ -94,7 +94,7 @@ app.post("/register", async (req, res) => {
   };
   checkEmailAddress(email);
   if (!isValid) {
-    res.send("Must use a valid email address.");
+    res.send("Must use a valid email address");
   } else {
     connection.query(
       `select * from users where email=?`,

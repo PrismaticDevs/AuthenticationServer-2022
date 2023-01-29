@@ -35,7 +35,10 @@ const Auth = () => {
   const submitRegistrationForm = async (e) => {
     await axios.post("/register", registrationForm).then((res) => {
       setRegistrationMessage(res.data);
-      if (res.data === `${registrationEmail} already has an account`) {
+      if (
+        res.data === `${registrationEmail} already has an account` ||
+        "Must use valid email address"
+      ) {
         setStatus(false);
       } else {
         setStatus(true);
