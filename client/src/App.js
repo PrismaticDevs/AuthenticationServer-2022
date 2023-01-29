@@ -4,7 +4,7 @@ import NoPage from "./components/NoPage";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Login from "./components/Login";
+import Login from "./components/Auth";
 
 function App() {
   return (

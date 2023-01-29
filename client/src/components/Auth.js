@@ -15,7 +15,7 @@ const Auth = () => {
     password: loginPassword,
   };
   const registrationForm = {
-    username: username,
+    name: username,
     email: registrationEmail,
     password: registrationPassword,
   };
