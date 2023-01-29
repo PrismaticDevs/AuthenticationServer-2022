@@ -26,9 +26,13 @@ const Sidebar = () => {
             </button>
             {showVanilla ? (
               <>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
+                <a
+                  href="https://www.javascript.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  JavaScript.com
+                </a>
               </>
             ) : (
               <></>
@@ -48,9 +52,15 @@ const Sidebar = () => {
             </button>
             {showFrameworks ? (
               <>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
+                <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                  React.js
+                </a>
+                <a href="https://angular.io/" target="_blank" rel="noreferrer">
+                  Angular
+                </a>
+                <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+                  Vue.js
+                </a>
               </>
             ) : (
               <></>
@@ -63,9 +73,16 @@ const Sidebar = () => {
             </button>
             {showNode ? (
               <>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
+                <a href="https://nodejs.org" target="_blank" rel="noreferrer">
+                  Node.js
+                </a>
+                <a
+                  href="https://expressjs.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Express
+                </a>
               </>
             ) : (
               <></>
@@ -76,14 +93,28 @@ const Sidebar = () => {
               className={showDatabases ? "show" : "hide"}
               onClick={toggleDatabases}
             >
-              Databases
+              Relational Databases
               {showDatabases ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
             </button>
             {showDatabases ? (
               <>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
-                <a href="/">Hi</a>
+                <a
+                  href="https://www.mysql.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MySQL
+                </a>
+                <a
+                  href="https://www.postgresql.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  PostGres
+                </a>
+                <a href="https://mariadb.org/" target="_blank" rel="noreferrer">
+                  MariaDB
+                </a>
               </>
             ) : (
               <></>

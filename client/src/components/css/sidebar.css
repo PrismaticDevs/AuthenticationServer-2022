@@ -48,7 +48,11 @@
     background: white;
 }
 
-.sidebar li a {
+nav .sidebar li a {
     background: var(--secondary);
     color: #282c34;
+}
+
+.sidebar li a:hover {
+    color: white;
 }
