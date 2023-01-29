@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Modal from "./Modal";
 
 const Auth = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -22,7 +21,6 @@ const Auth = () => {
   };
   const submitLoginForm = async (e) => {
     console.log("hi");
-    e.preventDefault();
     await axios.post("/login", loginForm).then((res) => {
       setLoginMessage(res.data);
       if (res.data === "Invalid credentials") {
@@ -46,6 +44,16 @@ const Auth = () => {
       }
     });
   };
+  const handleKeypressLogin = (e) => {
+    if (e.keyCode === 13) {
+      submitLoginForm();
+    }
+  };
+  const handleKeypressRegister = (e) => {
+    if (e.keyCode === 13) {
+      submitLoginForm();
+    }
+  };
   return (
     <>
       <div className="form-container">
@@ -68,6 +76,7 @@ const Auth = () => {
             placeholder="Password"
             autoComplete="off"
             onChange={(e) => setLoginPassword(e.target.value)}
+            onKeyDown={handleKeypressLogin}
           />
           <input type="button" value="Login" onClick={submitLoginForm} />
           <p
@@ -103,6 +112,7 @@ const Auth = () => {
             placeholder="Password"
             autoComplete="off"
             onChange={(e) => setRegistrationPassword(e.target.value)}
+            onKeyDown={handleKeypressRegister}
           />
           <input type="button" value="Login" onClick={submitRegistrationForm} />
           <p
