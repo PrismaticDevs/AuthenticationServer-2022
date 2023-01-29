@@ -40,7 +40,7 @@ const Auth = () => {
       if (res.data === `${registrationEmail} already has an account`) {
         setStatus(false);
         registrationMessage("");
-      } else if (res.data === "Must use valid email address") {
+      } else if (res.data === "Must use a valid email address") {
         setStatus(false);
         setLoginMessage("");
       } else if (res.data === "Password must be at least 8 characters") {

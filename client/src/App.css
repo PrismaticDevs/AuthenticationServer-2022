@@ -111,7 +111,7 @@ h1 {
 }
 
 .good {
-    color: var(--base);
+    color: var(--secondary);
     animation: zoom-g;
     animation-duration: 3s;
 }
