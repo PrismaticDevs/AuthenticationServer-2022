@@ -91,7 +91,7 @@ const Auth = () => {
           <div className="App-header">
             <h1>Register</h1>
           </div>
-          <label>Name</label>
+          <label>Username</label>
           <input
             type="text"
             required
