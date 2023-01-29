@@ -49,10 +49,11 @@
 }
 
 nav .sidebar li a {
-    background: var(--secondary);
+    background: white;
     color: #282c34;
+    font-size: 1em;
 }
 
 .sidebar li a:hover {
-    color: white;
+    color: var(--secondary);
 }
