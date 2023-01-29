@@ -22,7 +22,7 @@ const Layout = () => {
   const out = async () => {
     await axios.get("/logout");
     getToken();
-    window.location.href = "/login";
+    window.location.href = "/auth";
   };
   useEffect(() => {
     getToken();
@@ -49,7 +49,7 @@ const Layout = () => {
               </li>
             ) : (
               <li className="login">
-                <NavLink className="login" to="/login">
+                <NavLink className="login" to="/auth">
                   <span title="Login">
                     <LoginIcon className="login" />
                   </span>

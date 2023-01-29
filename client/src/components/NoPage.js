@@ -1,4 +1,5 @@
 import React from "react";
+import ufo from "../ufo.png";
 
 const NoPage = () => {
   return (
@@ -7,10 +8,16 @@ const NoPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        margin: "0 auto",
       }}
     >
-      <h1>404</h1>
-      <h3 className="notFound">Page Not Found</h3>
+      <div>
+        <img style={{ height: 100 }} src={ufo} alt="ufo" />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h1>404</h1>
+          <h3 className="notFound">Page Not Found</h3>
+        </div>
+      </div>
     </div>
   );
 };

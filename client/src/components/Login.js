@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Modal from "./Modal";
 
-const Login = () => {
+const Auth = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -117,4 +117,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;

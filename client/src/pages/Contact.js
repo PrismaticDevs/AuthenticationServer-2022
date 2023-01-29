@@ -1,6 +1,7 @@
 import React from "react";
 import Article from "../components/Article";
 import "../App.css";
+import "../components/css/article.css";
 
 const Contact = () => {
   const body = (
