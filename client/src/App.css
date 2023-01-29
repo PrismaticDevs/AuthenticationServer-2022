@@ -106,7 +106,7 @@ h1 {
 }
 
 .notFound {
-    color: var(--bad);
+    color: #237860;
 }
 
 .good {
@@ -188,6 +188,17 @@ p.login {
     border-radius: 0.25em;
     font-size: 1.5em;
     color: white;
+}
+
+.modalBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.1em);
 }
 
 .cancel,

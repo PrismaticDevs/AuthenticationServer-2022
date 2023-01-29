@@ -14,8 +14,8 @@ const NoPage = () => {
       <div>
         <img style={{ height: 100 }} src={ufo} alt="ufo" />
         <div style={{ display: "flex", alignItems: "center" }}>
-          <h1>404</h1>
-          <h3 className="notFound">Page Not Found</h3>
+          <h1 className="notFound">404</h1>
+          <h3>Page Not Found</h3>
         </div>
       </div>
     </div>
