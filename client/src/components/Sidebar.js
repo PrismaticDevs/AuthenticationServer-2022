@@ -10,8 +10,10 @@ const Sidebar = () => {
   const toggleFrameworks = () => setShowFrameworks(!showFrameworks);
   const [showNode, setShowNode] = useState(false);
   const toggleNode = () => setShowNode(!showNode);
-  const [showDatabases, setShowDatabases] = useState(false);
-  const toggleDatabases = () => setShowDatabases(!showDatabases);
+  const [showSQL, setShowSQL] = useState(false);
+  const toggleSQL = () => setShowSQL(!showSQL);
+  const [showNoSQL, setShowNoSQL] = useState(false);
+  const toggleNoSQL = () => setShowNoSQL(!showNoSQL);
   return (
     <>
       <div className="sidebar">
@@ -89,14 +91,11 @@ const Sidebar = () => {
             )}
           </li>
           <li>
-            <button
-              className={showDatabases ? "show" : "hide"}
-              onClick={toggleDatabases}
-            >
-              Relational Databases
-              {showDatabases ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
+            <button className={showSQL ? "show" : "hide"} onClick={toggleSQL}>
+              SQL
+              {showSQL ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
             </button>
-            {showDatabases ? (
+            {showSQL ? (
               <>
                 <a
                   href="https://www.mysql.com/"
@@ -114,6 +113,38 @@ const Sidebar = () => {
                 </a>
                 <a href="https://mariadb.org/" target="_blank" rel="noreferrer">
                   MariaDB
+                </a>
+              </>
+            ) : (
+              <></>
+            )}
+          </li>
+          <li>
+            <button
+              className={showNoSQL ? "show" : "hide"}
+              onClick={toggleNoSQL}
+            >
+              NoSQL
+              {showNoSQL ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
+            </button>
+            {showNoSQL ? (
+              <>
+                <a
+                  href="https://www.mongodb.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  MongoDB
+                </a>
+                <a
+                  href="https://couchdb.apache.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Apache CouchDB
+                </a>
+                <a href="https://redis.io/" target="_blank" rel="noreferrer">
+                  Redis
                 </a>
               </>
             ) : (
