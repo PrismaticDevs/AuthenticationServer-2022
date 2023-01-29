@@ -93,8 +93,11 @@ app.post("/register", async (req, res) => {
     return isValid;
   };
   checkEmailAddress(email);
+  const passwordLength = password.length;
   if (!isValid) {
     res.send("Must use a valid email address");
+  } else if (passwordLength < 8) {
+    res.send("Password must be at least 8 characters");
   } else {
     connection.query(
       `select * from users where email=?`,

@@ -35,10 +35,11 @@ const Auth = () => {
   const submitRegistrationForm = async (e) => {
     await axios.post("/register", registrationForm).then((res) => {
       setRegistrationMessage(res.data);
-      if (
-        res.data === `${registrationEmail} already has an account` ||
-        "Must use valid email address"
-      ) {
+      if (res.data === `${registrationEmail} already has an account`) {
+        setStatus(false);
+      } else if (res.data === "Must use valid email address") {
+        setStatus(false);
+      } else if (res.data === "Password must be at least 8 characters") {
         setStatus(false);
       } else {
         setStatus(true);
