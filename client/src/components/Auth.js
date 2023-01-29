@@ -60,6 +60,11 @@ const Auth = () => {
             placeholder="Email"
             autoComplete="off"
             onChange={(e) => setLoginEmail(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                submitLoginForm();
+              }
+            }}
           />
           <label>Password</label>
           <input
@@ -92,6 +97,11 @@ const Auth = () => {
             required
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                submitRegistrationForm();
+              }
+            }}
           />
           <label>Email</label>
           <input
@@ -100,6 +110,11 @@ const Auth = () => {
             placeholder="Email"
             autoComplete="off"
             onChange={(e) => setRegistrationEmail(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                submitRegistrationForm();
+              }
+            }}
           />
           <label>Password</label>
           <input
