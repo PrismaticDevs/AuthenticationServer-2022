@@ -32,19 +32,18 @@ nav {
     background-color: var(--base);
     margin: 0;
     padding: 1em;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    height: 100vh;
 }
 
 nav ul {
     margin: 0;
     padding: 0;
-    display: inline-block;
 }
 
 nav ul li {
-    /* display: inline; */
     list-style-type: none;
 }
 
@@ -174,7 +173,7 @@ p.login {
 
 .modal {
     z-index: 1;
-    background-color: grey;
+    background-color: var(--base);
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.5);
     width: fit-content;
     height: fit-content;
@@ -188,6 +187,7 @@ p.login {
     position: fixed;
     border-radius: 0.25em;
     font-size: 1.5em;
+    color: white;
 }
 
 .cancel,
