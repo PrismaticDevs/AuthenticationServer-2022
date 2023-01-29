@@ -44,16 +44,7 @@ const Auth = () => {
       }
     });
   };
-  const handleKeypressLogin = (e) => {
-    if (e.keyCode === 13) {
-      submitLoginForm();
-    }
-  };
-  const handleKeypressRegister = (e) => {
-    if (e.keyCode === 13) {
-      submitLoginForm();
-    }
-  };
+
   return (
     <>
       <div className="form-container">
@@ -76,7 +67,11 @@ const Auth = () => {
             placeholder="Password"
             autoComplete="off"
             onChange={(e) => setLoginPassword(e.target.value)}
-            onKeyDown={handleKeypressLogin}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                submitLoginForm();
+              }
+            }}
           />
           <input type="button" value="Login" onClick={submitLoginForm} />
           <p
@@ -112,7 +107,11 @@ const Auth = () => {
             placeholder="Password"
             autoComplete="off"
             onChange={(e) => setRegistrationPassword(e.target.value)}
-            onKeyDown={handleKeypressRegister}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                submitRegistrationForm();
+              }
+            }}
           />
           <input type="button" value="Login" onClick={submitRegistrationForm} />
           <p
