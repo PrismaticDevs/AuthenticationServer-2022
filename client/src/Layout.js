@@ -29,35 +29,37 @@ const Layout = () => {
   }, []);
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-          {token.name ? (
-            <li className="logout">
-              <button className="logout logout-btn" onClick={logout}>
-                <span title="Logout">
-                  <LogoutIcon />
-                </span>
-              </button>
-              <p className="logout text">User: {token.name}</p>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
             </li>
-          ) : (
-            <li className="login">
-              <NavLink className="login" to="/login">
-                <span title="Login">
-                  <LoginIcon className="login" />
-                </span>
-              </NavLink>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
-          )}
-        </ul>
-        <Sidebar />
-      </nav>
+            {token.name ? (
+              <li className="logout">
+                <button className="logout logout-btn" onClick={logout}>
+                  <span title="Logout">
+                    <LogoutIcon />
+                  </span>
+                </button>
+                <p className="logout text">User: {token.name}</p>
+              </li>
+            ) : (
+              <li className="login">
+                <NavLink className="login" to="/login">
+                  <span title="Login">
+                    <LoginIcon className="login" />
+                  </span>
+                </NavLink>
+              </li>
+            )}
+          </ul>
+          <Sidebar />
+        </nav>
+      </div>
       {modal ? (
         <Modal message="Are you sure you want to log out?" confirm={out} />
       ) : (

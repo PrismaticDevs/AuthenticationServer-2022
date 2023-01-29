@@ -37,9 +37,6 @@ const Home = () => {
   );
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <div className="App-header">
-        <h1>Home</h1>
-      </div>
       <Article
         title="Example"
         body={body}

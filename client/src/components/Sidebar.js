@@ -7,6 +7,10 @@ const Sidebar = () => {
       <div className="sidebar">
         <ul>
           <li>Blop</li>
+          <li>Blop</li>
+          <li>Blop</li>
+          <li>Blop</li>
+          <li>Blop</li>
         </ul>
       </div>
     </>

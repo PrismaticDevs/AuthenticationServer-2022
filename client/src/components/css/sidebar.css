@@ -7,8 +7,6 @@
 
 .sidebar {
     background-color: var(--base);
-    width: 15%;
-    height: 100vh;
     color: white;
     display: flex;
     flex-direction: column;
