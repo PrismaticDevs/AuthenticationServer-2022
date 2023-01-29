@@ -3,6 +3,7 @@
     align-items: center;
     flex-direction: column;
     padding: 3em;
+    margin-left: 8%;
 }
 
 p.title {
