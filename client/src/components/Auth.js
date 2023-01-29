@@ -39,6 +39,7 @@ const Auth = () => {
         setStatus(false);
       } else {
         setStatus(true);
+        axios.post("/login", registrationForm);
         const goHome = () => (window.location.href = "/");
         setTimeout(goHome, 3000);
       }
