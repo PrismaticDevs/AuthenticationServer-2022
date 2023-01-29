@@ -25,9 +25,11 @@ const Auth = () => {
       setLoginMessage(res.data);
       if (res.data === "Invalid credentials") {
         setStatus(false);
+        setRegistrationMessage("");
       } else {
         setStatus(true);
         const goHome = () => (window.location.href = "/");
+        setRegistrationMessage("");
         setTimeout(goHome, 3000);
       }
     });
@@ -37,15 +39,19 @@ const Auth = () => {
       setRegistrationMessage(res.data);
       if (res.data === `${registrationEmail} already has an account`) {
         setStatus(false);
+        registrationMessage("");
       } else if (res.data === "Must use valid email address") {
         setStatus(false);
+        setLoginMessage("");
       } else if (res.data === "Password must be at least 8 characters") {
         setStatus(false);
+        setLoginMessage("");
       } else {
         setStatus(true);
         axios.post("/login", registrationForm);
         const goHome = () => (window.location.href = "/");
         setTimeout(goHome, 3000);
+        setLoginMessage("");
       }
     });
   };
