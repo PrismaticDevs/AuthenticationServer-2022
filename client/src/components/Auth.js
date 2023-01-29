@@ -27,10 +27,10 @@ const Auth = () => {
         setStatus(false);
       } else {
         setStatus(true);
+        const goHome = () => (window.location.href = "/");
+        setTimeout(goHome, 3000);
       }
     });
-    const goHome = () => (window.location.href = "/");
-    setTimeout(goHome, 3000);
   };
   const submitRegistrationForm = async (e) => {
     await axios.post("/register", registrationForm).then((res) => {
