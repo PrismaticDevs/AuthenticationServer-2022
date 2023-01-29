@@ -150,7 +150,10 @@ const Auth = () => {
           </form>
           <p
             className={status ? "good" : "bad"}
-            style={{ fontSize: "1.5em", textAlign: "center" }}
+            style={{
+              fontSize: "1.5em",
+              textAlign: "center",
+            }}
           >
             {registrationMessage}
           </p>

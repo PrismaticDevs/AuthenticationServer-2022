@@ -6,7 +6,7 @@ const Article = (props) => {
     <>
       <article className="article">
         <p className="title">{props.title}</p>
-        <p className="articleBody">{props.body}</p>
+        <div className="articleBody">{props.body}</div>
         <div className="items">
           <p className="lineItem">By: {props.author}</p>
           <p className="lineItem">{props.date}</p>

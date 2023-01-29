@@ -37,6 +37,7 @@ nav {
     flex-direction: column;
     overflow: hidden;
     position: fixed;
+    align-items: center;
 }
 
 nav ul {

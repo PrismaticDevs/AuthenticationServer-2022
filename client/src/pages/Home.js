@@ -220,14 +220,18 @@ const Home = () => {
     </>
   );
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <Article
-        title="Example"
-        body={body}
-        author="Matthew Brignola"
-        date="1/28/2022"
-      />
-    </div>
+    <>
+      <div
+        style={{ display: "flex", flexDirection: "column", marginLeft: "10em" }}
+      >
+        <Article
+          title="Example"
+          body={body}
+          author="Matthew Brignola"
+          date="1/28/2022"
+        />
+      </div>
+    </>
   );
 };
 
