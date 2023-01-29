@@ -217,3 +217,7 @@ p.login {
     flex-direction: row;
     width: 100%;
 }
+
+.title {
+    text-align: center;
+}
