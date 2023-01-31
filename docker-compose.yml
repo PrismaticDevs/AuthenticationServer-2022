@@ -1,13 +1,13 @@
-version: "1.0"
+version: "0.0"
 services:
   client:
-    build: .
+    build: ./client
     ports:
       - "3000:3000"
     depends_on:
       - server
   server:
-    build: .
+    build: ./server
     ports:
       - "8080:8080"
     depends_on:
