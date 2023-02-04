@@ -20,27 +20,6 @@
     flex-direction: column;
 }
 
-.hide {
-    outline: none;
-    border: none;
-    background: var(--secondary);
-    color: var(--base);
-    padding: 0.75em;
-    font-size: 1em;
-    display: flex;
-}
-
-.show {
-    outline: none;
-    border: none;
-    background: none;
-    color: var(--secondary);
-    padding: 0.75em;
-    font-size: 1em;
-    display: flex;
-    border: 1px solid var(--secondary);
-}
-
 .col {
     flex-direction: column;
 }

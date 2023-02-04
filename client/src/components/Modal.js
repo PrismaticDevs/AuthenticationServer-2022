@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../App.css";
+import "./css/modal.css";
 
 const Modal = (props) => {
   const [showModal, setShowModal] = useState(true);

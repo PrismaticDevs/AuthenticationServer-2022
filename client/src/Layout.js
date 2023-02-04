@@ -7,6 +7,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Modal from "./components/Modal";
 import Sidebar from "./components/Sidebar";
+import "./Layout.css";
+import "./components/css/sidebar.css";
 
 const Layout = () => {
   const [token, setToken] = useState({});
@@ -31,6 +33,8 @@ const Layout = () => {
   }, []);
   const [showHTML, setShowHTML] = useState(false);
   const toggleHTML = () => setShowHTML(!showHTML);
+  const [showJS, setShowJS] = useState(false);
+  const toggleJS = () => setShowJS(!showJS);
   return (
     <>
       <div className="sidebar">
@@ -47,7 +51,22 @@ const Layout = () => {
               {showHTML ? (
                 <>
                   <li>
-                    <NavLink to="/">HTML & CSS</NavLink>
+                    <NavLink to="/webdesign">Web Design 101</NavLink>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )}
+            </li>
+            <li>
+              <button className={showJS ? "show" : "hide"} onClick={toggleJS}>
+                JavaScript
+                {showJS ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
+              </button>
+              {showJS ? (
+                <>
+                  <li>
+                    <NavLink to="/javascript">JavaScript 101</NavLink>
                   </li>
                 </>
               ) : (
@@ -55,20 +74,22 @@ const Layout = () => {
               )}
             </li>
             {token.name ? (
-              <>
-                <button className="logout logout-btn" onClick={logout}>
+              <div className="flex">
+                <p className="text">User: {token.name}</p>
+                <NavLink className="logout" onClick={logout}>
                   <span title="Logout">
-                    <LogoutIcon />
+                    <LogoutIcon className="logout" />
                   </span>
-                </button>
-                <p className="logout text">User: {token.name}</p>
-              </>
+                </NavLink>
+              </div>
             ) : (
-              <NavLink className="login" to="/auth">
-                <span title="Login">
-                  <LoginIcon className="login" />
-                </span>
-              </NavLink>
+              <div className="flex">
+                <NavLink className="login" to="/auth">
+                  <span title="Login">
+                    <LoginIcon />
+                  </span>
+                </NavLink>
+              </div>
             )}
           </ul>
           <Sidebar />

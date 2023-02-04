@@ -28,73 +28,15 @@ button {
     cursor: pointer;
 }
 
-nav {
-    background-color: var(--base);
-    margin: 0;
-    padding: 1em;
-    height: 100%;
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.flex {
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: fixed;
+    justify-content: center;
     align-items: center;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    text-decoration: none;
-    padding: 0.5em;
-    color: white;
-    font-size: 1.5em;
-}
-
-nav a:hover {
-    color: var(--secondary);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: var(--base);
-    padding: 3em;
-    padding-top: 1em;
-    margin: 3em;
-    color: white;
-    border-radius: 1em 1em 1em;
-    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.5);
-}
-
-input[type="button"] {
-    background: rgb(170, 170, 170);
-    cursor: pointer;
-    margin-top: 1.25em;
-    width: 100%;
-}
-
-input {
-    border-radius: 1em;
-    padding: 0.5em;
-    margin: 0.25em;
-    border: none;
-    width: 100%;
-}
-
-input:focus {
-    border: 3px solid #555;
-}
-
-h1 {
-    margin: 0;
-}
-
-.active {
-    color: var(--secondary);
-    text-decoration: underline;
 }
 
 .App-header {
@@ -121,6 +63,37 @@ h1 {
     color: var(--bad);
 }
 
+.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.hide {
+    outline: none;
+    border: none;
+    background: var(--secondary);
+    color: var(--base);
+    padding: 0.75em;
+    font-size: 1em;
+    display: flex;
+}
+
+.show {
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--secondary);
+    padding: 0.75em;
+    font-size: 1em;
+    display: flex;
+    border: 1px solid var(--secondary);
+}
+
 @keyframes zoom-g {
     0% {
         scale: 0.5;
@@ -131,120 +104,4 @@ h1 {
     100% {
         scale: 1;
     }
-}
-
-.fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-.logout,
-.login {
-    top: 0;
-    right: 0;
-    float: right;
-    background: none;
-    border: none;
-    outline: none;
-    margin: 0.5em;
-    margin-top: 0;
-    width: 5em;
-    display: flex;
-}
-
-.login:hover,
-.logout-btn:hover {
-    opacity: 0.5;
-}
-
-.login.text,
-.logout.text {
-    word-wrap: break-word;
-}
-
-.login {
-    color: var(--good);
-}
-
-.logout {
-    color: var(--bad);
-}
-
-p.logout,
-p.login {
-    margin-top: 3pt;
-}
-
-.text {
-    color: white;
-}
-
-.modal {
-    z-index: 2;
-    background-color: var(--base);
-    width: fit-content;
-    height: fit-content;
-    padding: 0.75em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    left: 33%;
-    top: 33%;
-    position: fixed;
-    border-radius: 0.25em;
-    font-size: 1.5em;
-    color: white;
-}
-
-.modalBG {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1040;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(0.1em);
-}
-
-.cancel,
-.confirm {
-    outline: none;
-    border: none;
-    padding: 0.75em;
-    margin: 0.5em;
-    border-radius: 0.75em;
-    box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
-    font-weight: bolder;
-}
-
-.cancel {
-    background: var(--bad);
-    color: white;
-}
-
-.confirm {
-    background: var(--good);
-}
-
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-}
-
-.subForm {
-    display: flex;
-    flex-direction: column;
-    margin: 8em;
-    justify-content: center;
-    align-items: center;
-}
-
-.title {
-    text-align: center;
 }

@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     padding: 3em;
-    margin-left: 8%;
+    margin-left: 18%;
 }
 
 p.title {
@@ -15,13 +15,9 @@ p.title {
     text-decoration: underline;
 }
 
-p {
-    margin: 0;
-    padding: 0;
-}
-
-p.articleBody {
+.articleBody p {
     text-indent: 2em;
+    margin: 5;
 }
 
 .items {

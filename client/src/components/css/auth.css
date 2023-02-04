@@ -1,0 +1,76 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--base);
+    padding: 3em;
+    padding-top: 1em;
+    margin: 3em;
+    color: white;
+    border-radius: 1em 1em 1em;
+    box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.5);
+}
+
+input[type="button"] {
+    background: rgb(170, 170, 170);
+    cursor: pointer;
+    margin-top: 1.25em;
+    width: 100%;
+}
+
+input {
+    border-radius: 1em;
+    padding: 0.5em;
+    margin: 0.25em;
+    border: none;
+    width: 100%;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.subForm {
+    display: flex;
+    flex-direction: column;
+    margin: 8em;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout,
+.login {
+    top: 0;
+    right: 0;
+    float: right;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0.5em;
+}
+
+.login:hover,
+.logout-btn:hover {
+    opacity: 0.5;
+}
+
+.login {
+    color: var(--good);
+}
+
+.logout {
+    color: var(--bad);
+}
+
+p.logout,
+p.login {
+    margin-top: 3pt;
+}
