@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Merriweather+Sans&family=Roboto:ital,wght@1,300;1,900&family=Ubuntu&display=swap");
 :root {
-    --good: #1bff23;
+    --good: #c2ed5f;
     --bad: #e42b2e;
     --base: #282c34;
-    --secondary: #637caf;
+    --secondary: #8ea5d3;
+    --tertiary: #7793ca;
 }
 
 body {

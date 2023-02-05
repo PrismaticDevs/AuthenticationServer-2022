@@ -6,9 +6,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Modal from "./components/Modal";
-import Sidebar from "./components/Sidebar";
 import "./Layout.css";
-import "./components/css/sidebar.css";
 
 const Layout = () => {
   const [token, setToken] = useState({});
@@ -92,7 +90,6 @@ const Layout = () => {
               </div>
             )}
           </ul>
-          <Sidebar />
         </nav>
       </div>
       {modal ? (
