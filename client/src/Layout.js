@@ -33,6 +33,12 @@ const Layout = () => {
   const toggleHTML = () => setShowHTML(!showHTML);
   const [showJS, setShowJS] = useState(false);
   const toggleJS = () => setShowJS(!showJS);
+  const [showNode, setShowNode] = useState(false);
+  const toggleNode = () => setShowNode(!showNode);
+  const [showExpress, setShowExpress] = useState(false);
+  const toggleExpress = () => setShowExpress(!showExpress);
+  const [showP1, setShowP1] = useState(false);
+  const toggleP1 = () => setShowP1(!showP1);
   return (
     <>
       <div className="sidebar">
@@ -65,6 +71,45 @@ const Layout = () => {
                 <>
                   <li>
                     <NavLink to="/javascript">JavaScript 101</NavLink>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )}
+            </li>
+            <li>
+              <button
+                className={showNode ? "show" : "hide"}
+                onClick={toggleNode}
+              >
+                Node.js
+                {showNode ? <ChevronRightIcon /> : <KeyboardArrowDownIcon />}
+              </button>
+              {showNode ? (
+                <>
+                  <li>
+                    <NavLink to="/nodejs">Node.js 101</NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/express"
+                      style={{ display: "flex", alignItems: "center" }}
+                      onClick={toggleExpress}
+                    >
+                      Express.js
+                      {showExpress ? (
+                        <ChevronRightIcon />
+                      ) : (
+                        <KeyboardArrowDownIcon />
+                      )}
+                    </NavLink>
+                    {showExpress ? (
+                      <NavLink to="project1" onClick={toggleP1}>
+                        Project 1
+                      </NavLink>
+                    ) : (
+                      <></>
+                    )}
                   </li>
                 </>
               ) : (

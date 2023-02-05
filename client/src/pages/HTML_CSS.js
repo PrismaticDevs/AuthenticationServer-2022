@@ -6,10 +6,6 @@ import "../components/css/article.css";
 const HTML_CSS = () => {
   const body = (
     <div className="articleBody">
-      <div className="flex">
-        <h1>HTML</h1>
-        <p>Hyper Text Markup Language</p>
-      </div>
       <h3>How This Works</h3>
       <p>
         Rather than write our own articles when there are already hundreds of

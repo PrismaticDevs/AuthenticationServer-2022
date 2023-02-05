@@ -1,6 +1,5 @@
 import React from "react";
 import Article from "../components/Article";
-import "../App.css";
 import "../components/css/article.css";
 
 const JavaScript = () => {
@@ -41,7 +40,14 @@ const JavaScript = () => {
         of web pages components while he was on the job working on a government
         contract. That being said, a really good resource on web for you to
         reference when learning and using JavaScript is{" "}
-        <a href="https://www.w3schools.com/js/default.asp">W3 Schools</a>.
+        <a
+          href="https://www.w3schools.com/js/default.asp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          W3 Schools
+        </a>
+        .
       </p>
     </div>
   );

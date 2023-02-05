@@ -1,0 +1,21 @@
+:root {
+    --good: #c2ed5f;
+    --bad: #e42b2e;
+    --base: #282c34;
+    --secondary: #8ea5d3;
+    --tertiary: #7793ca;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em;
+    margin-left: 18vw;
+}
+
+.code {
+    border: solid 1pt var(--base);
+    padding: 3em;
+    width: 68vw;
+}
