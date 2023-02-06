@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/card.css";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Tooltip } from "@mui/material";
 
 const Card = (props) => {
+  const [title, setTitle] = useState("Copy Text");
+  const copy = () => {
+    setTitle("Copied");
+    const array = [];
+    props.code.props.children.map((child) => array.push(child.props.children));
+    const code = array.join("");
+    navigator.clipboard.writeText(code);
+    setTimeout(() => {
+      setTitle("Copy Text");
+    }, 1500);
+  };
   return (
     <>
       <div className="card">
-        <p className="code">
+        <div className="code">
           {props.code}
-          <Tooltip title="Copy code">
-            <ContentCopyIcon className="copy" />
+          <Tooltip title={title}>
+            <ContentCopyIcon className="copy" onClick={copy} />
           </Tooltip>
-        </p>
+        </div>
       </div>
     </>
   );

@@ -12,6 +12,7 @@
     flex-direction: column;
     padding: 3em;
     margin-left: 18vw;
+    background-color: white;
 }
 
 .code {
@@ -21,7 +22,6 @@
 }
 
 .copy {
-    position: fixed;
-    right: 0;
-    top: 0;
+    cursor: pointer;
+    float: right;
 }
