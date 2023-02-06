@@ -15,7 +15,7 @@ const Modal = (props) => {
     <div className="modalBG">
       <div className="modal">
         <h3>{props.message}</h3>
-        <div>
+        <div className="btnBox">
           <button onClick={no} className="cancel">
             Cancel
           </button>

@@ -104,7 +104,11 @@ const Layout = () => {
                       )}
                     </NavLink>
                     {showExpress ? (
-                      <NavLink to="project1" onClick={toggleP1}>
+                      <NavLink
+                        className="subLink"
+                        to="project1"
+                        onClick={toggleP1}
+                      >
                         Project 1
                       </NavLink>
                     ) : (

@@ -46,3 +46,8 @@
 .confirm {
     background: var(--good);
 }
+
+.btnBox {
+    display: flex;
+    justify-content: center;
+}

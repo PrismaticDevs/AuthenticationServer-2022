@@ -40,6 +40,10 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.text {
+    color: white;
+}
+
 .sidebar ul li {
     display: flex;
     flex-direction: column;
